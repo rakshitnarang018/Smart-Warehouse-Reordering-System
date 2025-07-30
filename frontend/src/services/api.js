@@ -1,7 +1,10 @@
 // API Service
 class ApiService {
     constructor() {
-        this.baseURL = 'http://localhost:5000/api';
+        // --- ✨ MODIFIED FOR DEPLOYMENT ---
+        // This line now uses an environment variable for the live URL,
+        // but falls back to localhost for local development.
+        this.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
     }
 
     async request(endpoint, options = {}) {
@@ -34,7 +37,7 @@ class ApiService {
         return this.request('/recommendations');
     }
 
-    // --- ✨ NEW: Function to Add a Product ---
+    // --- NEW: Function to Add a Product ---
     addProduct(productData) {
         return this.request('/products/add', {
             method: 'POST',
@@ -42,7 +45,7 @@ class ApiService {
         });
     }
 
-    // --- ✨ NEW: Function to Delete a Product ---
+    // --- NEW: Function to Delete a Product ---
     deleteProduct(productId) {
         return this.request(`/products/delete/${productId}`, {
             method: 'DELETE',
