@@ -1,0 +1,4 @@
+product_id,current_stock,incoming_stock,days_remaining,suggested_reorder_quantity,estimated_cost,criticality,lead_time_days
+CRITICAL_003,5,50,0.6,425,19125.0,high,14
+WIDGET_001,50,0,1.7,1750,44625.0,high,7
+FAST_007,200,0,8.0,1300,24050.0,high,6
